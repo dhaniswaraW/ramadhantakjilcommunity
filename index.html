@@ -446,6 +446,54 @@
             animation: shimmer 3s ease-in-out infinite;
             font-family: 'Georgia', serif;
         }
+
+        /* Simple menu below the main title */
+        .simple-menu {
+            margin: 14px 0 18px;
+        }
+
+        .simple-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .simple-menu > ul > li {
+            display: inline-block;
+            position: relative;
+            background: rgba(255,255,255,0.06);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: default;
+        }
+
+        .simple-menu .submenu {
+            display: none;
+            position: static; /* keep submenu in flow so it pushes content */
+            margin-top: 8px;
+            background: #ffffff;
+            color: #1a3a5c;
+            padding: 8px 10px;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            min-width: 160px;
+            z-index: 10;
+        }
+
+        .simple-menu .submenu li { display:block; }
+
+        .simple-menu .submenu a {
+            color: #1a3a5c;
+            text-decoration: none;
+            display: block;
+            padding: 6px 4px;
+        }
+
+        .simple-menu > ul > li:hover .submenu {
+            display: block;
+        }
         
         .container {
             max-width: 400px;
@@ -498,8 +546,8 @@
         }
         
         .report-box.report-2026 {
-            border-left-color: #95a5a6;
-            border-right-color: rgba(149, 165, 166, 0.2);
+            border-left-color: #7fbf9b; /* soft green */
+            border-right-color: rgba(127, 191, 155, 0.18);
         }
         
         .report-box.report-2024:hover {
@@ -529,15 +577,15 @@
         }
         
         .report-box.report-2026:hover {
-            border-left-color: #7f8c8d;
+            border-left-color: #5ea57f;
             background: 
-                linear-gradient(135deg, #f8f9f9 0%, #ecf0f1 50%, #f8f9f9 100%),
+                linear-gradient(135deg, #f6fff8 0%, #e9fbef 50%, #f6fff8 100%),
                 repeating-linear-gradient(
                     45deg,
                     transparent,
                     transparent 2px,
-                    rgba(149, 165, 166, 0.05) 2px,
-                    rgba(149, 165, 166, 0.05) 4px
+                    rgba(127, 191, 155, 0.05) 2px,
+                    rgba(127, 191, 155, 0.05) 4px
                 );
         }
         
@@ -656,6 +704,16 @@
     <div class="stars-container"></div>
     <div class="content">
         <h1 class="main-title">LAPORAN RAMADHAN TAKJIL COMMUNITY</h1>
+
+        <nav class="simple-menu" aria-label="Main">
+            <ul>
+                <li class="has-sub">Kegiatan Kami
+                    <ul class="submenu" aria-label="Kegiatan Kami submenu">
+                        <li><a href="Pages/index2026.html">Kegiatan 2026</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
         
         <div class="container">
             <div class="report-box report-2024" onclick="window.open('https://dhaniswaraw.github.io/laporanRTC/RTC%202024.pdf', '_blank')">
@@ -688,22 +746,23 @@
                 </svg>
             </div>
             
-            <div class="report-box report-2026" style="opacity: 0.7; cursor: not-allowed;" title="Report yet to be done">
+            <div class="report-box report-2026" onclick="window.open('https://dhaniswaraw.github.io/laporanRTC/RTC%202026.pdf', '_blank')">
                 <div class="report-content">
-                    <svg class="report-icon" viewBox="0 0 24 24" fill="#95a5a6">
+                    <svg class="report-icon" viewBox="0 0 24 24" fill="#7fbf9b">
                         <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,11L8,15H10.5V19H13.5V15H16L12,11Z"/>
                     </svg>
                     <div>
                         <h2 class="report-title">Laporan 2026</h2>
-                        <p class="report-year">Coming Soon</p>
+                        <p class="report-year">Tahun 2026</p>
                     </div>
                 </div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#95a5a6" style="opacity: 0.6;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7fbf9b" style="opacity: 0.6;">
                     <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
                 </svg>
             </div>
             
             <div class="instagram-link">
+                <p style="margin:0 0 8px;color:rgba(255,255,255,0.92);font-weight:600;">Kunjungi Kami</p>
                 <a href="https://instagram.com/ramadhantakjilcommunity" target="_blank" rel="noopener noreferrer" class="instagram-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
